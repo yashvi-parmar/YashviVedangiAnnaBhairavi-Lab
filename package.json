@@ -20,9 +20,20 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
-    ]
+      "react-app/jest",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier",
+      "cypress"
+    ],
+  "env": {
+      "cypress/globals": true
   },
+  "rules": {
+    "prettier/prettier": "warn"
+}
+},
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,5 +45,24 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-cypress": "2.12.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "prettier": "2.7.1"
+  }, 
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  }, 
+  "scripts": {
+    "start": "react-scrips start",
+    "build": "react-scrips build",
+    "test": "react-scrips test",
+    "lint": "eslint src",
+    "eject": "react-scripts eject"
   }
 }
